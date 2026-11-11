@@ -10,29 +10,9 @@ A local macOS inspector for Apple App Attest attestations and assertions. Find o
 - Keep independent drafts locally with SwiftData, with a shared App ID.
 - Explore a known-valid example without changing your saved inputs.
 
-## Clone and install
+## Getting started
 
-**Build requirements:** a Mac with **Xcode 26+ / Swift 6.2+** selected, Apple's Python 3 at `/usr/bin/python3`, and system OpenSSL. Xcode supplies the developer tools; no paid Apple Developer membership or signing certificate is required. The built app targets **macOS 14+**; the macOS version required to build depends on your Xcode version.
-
-```sh
-git clone https://github.com/shankarmadeshvaran/app-attest-decoder.git
-cd app-attest-decoder
-./script/install.sh
-```
-
-This checks the environment, builds a release app for your Mac's architecture, installs it in **`~/Applications/App Attest Decoder.app`**, and opens it. It does not need `sudo`. You can delete the checkout after installation: the Python decoder and example are copied into the app bundle. Keep Apple's Python 3 available for attestation decoding.
-
-If the installer reports an older Swift version, select Xcode 26+ in **Xcode → Settings → Locations → Command Line Tools**, then try again. This project is not an iOS app and requires no provisioning profile or development team.
-
-For a custom destination or to install without launching:
-
-```sh
-INSTALL_DIR="$HOME/Applications" OPEN_AFTER_INSTALL=0 ./script/install.sh
-```
-
-Builds are ad-hoc signed locally, **not Developer ID signed or notarized**. Cloning and building locally is the recommended installation path. Downloaded binaries may be subject to macOS security checks; the installer does not disable those protections.
-
-## Run from Xcode
+**Requirements:** a Mac with **Xcode 26+** (Swift 6.2+), Apple's Python 3 at `/usr/bin/python3`, and the system `openssl`. The app targets **macOS 14+**. No Apple Developer account, signing team, or provisioning profile is needed, and there are no third-party dependencies.
 
 ```sh
 git clone https://github.com/shankarmadeshvaran/app-attest-decoder.git
@@ -43,9 +23,9 @@ open AppAttestDecoder.xcodeproj
 1. Select the **AppAttestDecoder** scheme and **My Mac** as the run destination.
 2. Press **⌘R**. The app opens as **App Attest Decoder**.
 
-No signing team, provisioning profile, or Apple Developer account is needed: the project signs locally ("Sign to Run Locally") and has no third-party dependencies. The app is not sandboxed because it runs Apple's `/usr/bin/python3` to decode attestation objects.
+The project signs locally ("Sign to Run Locally") and is not notarized. The app is not sandboxed because it runs Apple's `/usr/bin/python3` to decode attestation objects.
 
-The same sources also build as a Swift package (`open Package.swift` or `swift build`). After adding, removing, or renaming a file under `Sources/AppAttestDecoder`, regenerate the Xcode project with `python3 script/generate_xcodeproj.py .`; CI fails if it is out of date.
+The same sources also open as a Swift package: `open Package.swift`, then select the **AppAttestDecoder** scheme and press ⌘R.
 
 ## Try it
 
@@ -107,15 +87,11 @@ Inputs are limited to 4 MB. Temporary attestation-processing files are removed a
 ## Development
 
 ```sh
-./script/build_and_run.sh          # Build debug app and launch
-./script/build_and_run.sh --build  # Build only
-./script/build_and_run.sh --package # Release ZIP + SHA256 checksum for this architecture
-./script/test.sh                   # All regression and persistence checks
+./script/test.sh                          # Assertion, persistence, and Python decoder tests
+python3 script/generate_xcodeproj.py .    # Regenerate the Xcode project after adding, removing, or renaming files
 ```
 
-You can also open `Package.swift` in Xcode. The reproducible app-bundle entrypoint is the script above. Optional modes: `--debug`, `--logs`, and `--verify`.
-
-Tests cover a synthetic known-valid assertion vector and negative cases, strict CBOR/DER handling, full receipt values, persistence across separate processes, draft independence, and clear behavior. GitHub Actions builds a release ZIP and runs tests on macOS.
+Tests cover a synthetic known-valid assertion vector and negative cases, strict CBOR/DER handling, full receipt values, persistence across separate processes, draft independence, and clear behavior. GitHub Actions runs the tests, builds the Xcode project, and checks that the project file is up to date.
 
 The attestation decoder the app bundles can also be run directly: `python3 Sources/AppAttestDecoder/Resources/appattest_decode.py --help`.
 

@@ -4,7 +4,7 @@ Bug fixes, UI improvements, documentation, and independently generated test vect
 
 1. Fork and clone the repository.
 2. Install/select Xcode 26+ (Swift 6.2+).
-3. Open `AppAttestDecoder.xcodeproj` and press ⌘R, or run `./script/build_and_run.sh`.
+3. Open `AppAttestDecoder.xcodeproj` and press ⌘R.
 4. Run `./script/test.sh` before opening a pull request. If you add, remove, or rename a
    source or resource file, run `python3 script/generate_xcodeproj.py .` and commit the result.
 

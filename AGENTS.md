@@ -31,41 +31,23 @@ There are no third-party Swift package dependencies.
 - Apple system Python at `/usr/bin/python3`.
 - OpenSSL available to the bundled Python decoder.
 
-The environment check reports missing prerequisites:
-
-```sh
-./script/check_environment.sh
-```
-
 ## Install and run
 
-Clone the repository, then run the setup check and the app:
+The supported way to build and run is Xcode:
 
 ```sh
 git clone https://github.com/shankarmadeshvaran/app-attest-decoder.git
 cd app-attest-decoder
-./script/check_environment.sh
-./script/build_and_run.sh run
+open AppAttestDecoder.xcodeproj
 ```
 
-To run from Xcode, open `AppAttestDecoder.xcodeproj`, select the **AppAttestDecoder** scheme and **My Mac**, and press ⌘R. No development team is required (ad-hoc "Sign to Run Locally", no App Sandbox because the app runs `/usr/bin/python3`). `Package.swift` builds the same sources; `Bundle.appResources` resolves resources from `Bundle.module` under SwiftPM and `Bundle.main` under the Xcode project. Regenerate the project with `python3 script/generate_xcodeproj.py .` after adding, removing, or renaming files in `Sources/AppAttestDecoder`; CI verifies it is current.
+Select the **AppAttestDecoder** scheme and **My Mac**, and press ⌘R. No development team is required (ad-hoc "Sign to Run Locally", no App Sandbox because the app runs `/usr/bin/python3`). `Package.swift` builds the same sources and can also be opened in Xcode; `Bundle.appResources` resolves resources from `Bundle.module` under SwiftPM and `Bundle.main` under the Xcode project. Regenerate the project with `python3 script/generate_xcodeproj.py .` after adding, removing, or renaming files in `Sources/AppAttestDecoder`; CI verifies it is current.
 
-For a local application bundle in `~/Applications`:
+There are no install or packaging scripts; do not add them unless the maintainer asks. Run the automated checks with:
 
 ```sh
-./script/install.sh
+./script/test.sh
 ```
-
-Useful build commands:
-
-```sh
-./script/build_and_run.sh --build     # Debug build only
-./script/build_and_run.sh --package   # Release .app bundle in dist/
-./script/build_and_run.sh --install   # Build and install locally
-./script/test.sh                      # Complete automated verification
-```
-
-The app is intentionally unsigned/not notarized for independent local builds. macOS may require a user to approve opening a locally built app in System Settings.
 
 ## How to use the application
 
@@ -117,8 +99,6 @@ Sources/AppAttestDecoder/Models/                   Codable/display and SwiftData
 Sources/AppAttestDecoder/Stores/                   SwiftData draft storage
 Sources/AppAttestDecoder/Services/                 Decoding, CBOR parsing, and assertion verification
 Sources/AppAttestDecoder/Resources/                Bundled Python decoder, sample data, icon
-script/check_environment.sh                        Host prerequisite validation
-script/build_and_run.sh                            Build, run, package, and install workflow
 script/test.sh                                     Full test entry point
 script/test_assertion.sh                           Native assertion test vector check
 script/test_persistence.sh                         SwiftData persistence check
@@ -158,7 +138,7 @@ Run the narrowest meaningful command while iterating, then run the relevant broa
 ./script/test_assertion.sh      # Required after assertion parser/verifier changes
 ./script/test_persistence.sh    # Required after SwiftData model/store/input changes
 ./script/test.sh                # Required before a release or broad handoff
-./script/build_and_run.sh --package  # Required when changing app packaging/resources
+xcodebuild -project AppAttestDecoder.xcodeproj -scheme AppAttestDecoder build  # Required when changing project files or resources
 ```
 
 For UI work, launch the app and exercise both sidebar destinations, shared App ID synchronization, input persistence, report status rendering, and Copy actions for long values.
