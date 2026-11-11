@@ -16,15 +16,31 @@ Values from the device and app are redacted in these screenshots.
 
 ### Attestation Decoder
 
-| Input | Decoded report | Nonce and receipt |
-| --- | --- | --- |
-| ![Attestation input](.github/screenshots/01-attestation-input.png) | ![Attestation report with authData and certificate checks](.github/screenshots/02-attestation-report.png) | ![Nonce check and decoded receipt fields](.github/screenshots/03-attestation-receipt.png) |
+**Input**
+
+![Attestation input](.github/screenshots/01-attestation-input.png)
+
+**Decoded report**
+
+![Attestation report with authData and certificate checks](.github/screenshots/02-attestation-report.png)
+
+**Nonce and receipt**
+
+![Nonce check and decoded receipt fields](.github/screenshots/03-attestation-receipt.png)
 
 ### Assertion Decoder
 
-| Input | Decoded report | Signature verification |
-| --- | --- | --- |
-| ![Assertion input with public key and clientDataHash](.github/screenshots/04-assertion-input.png) | ![Assertion report with App ID and counter checks](.github/screenshots/05-assertion-report.png) | ![Signature verification with VALID result](.github/screenshots/06-assertion-verification.png) |
+**Input**
+
+![Assertion input with public key and clientDataHash](.github/screenshots/04-assertion-input.png)
+
+**Decoded report**
+
+![Assertion report with App ID and counter checks](.github/screenshots/05-assertion-report.png)
+
+**Signature verification**
+
+![Signature verification with VALID result](.github/screenshots/06-assertion-verification.png)
 
 ## App Attest guide
 
