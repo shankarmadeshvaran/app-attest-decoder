@@ -2,10 +2,10 @@
 """Decode an Apple App Attest attestation object into readable text.
 
 Input (first match wins): a command-line argument, --file, or the clipboard.
-It accepts the raw hex, base64, or the whole "[AppAttest] [ATTESTATION_OBJECT_HEX] ..." log line.
+It accepts the object as hex or base64.
 
     python3 appattest_decode.py                       # reads the clipboard
-    python3 appattest_decode.py <hex-or-log-line>
+    python3 appattest_decode.py <hex-or-base64>
     python3 appattest_decode.py --app-id TEAMID.com.example.app \
         --challenge example-challenge
 
@@ -132,9 +132,6 @@ def load_input(args):
         text = open(args.file).read()
     else:
         text = subprocess.run(["pbpaste"], capture_output=True, text=True).stdout
-    match = re.search(r"(?:ATTESTATION_OBJECT_HEX|ASSERTION_OBJECT_HEX)\]?\s*([0-9a-fA-F]+)", text)
-    if match:
-        return bytes.fromhex(match.group(1))
     compact = re.sub(r"\s", "", text)
     if compact and re.fullmatch(r"[0-9a-fA-F]+", compact) and len(compact) % 2 == 0:
         return bytes.fromhex(compact)
@@ -238,7 +235,7 @@ def decode_assertion(raw, app_id=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("hex", nargs="?", help="attestation object as hex/base64, or the log line (default: clipboard)")
+    parser.add_argument("hex", nargs="?", help="attestation object as hex or base64 (default: clipboard)")
     parser.add_argument("--assertion", action="store_true", help="decode an App Attest assertion object")
     parser.add_argument("--file", help="read the input from a file")
     parser.add_argument("--app-id", help="TEAMID.bundle.id, checks it against rpIdHash")

@@ -24,10 +24,7 @@ enum AssertionSignatureVerifier {
     }
 
     static func assertionBytes(_ text: String) throws -> Data {
-        var value = text.trimmingCharacters(in: .whitespacesAndNewlines)
-        if let range = value.range(of: "ASSERTION_OBJECT_HEX") {
-            value = String(value[range.upperBound...]).trimmingCharacters(in: CharacterSet(charactersIn: "] \t"))
-        }
+        let value = text.trimmingCharacters(in: .whitespacesAndNewlines)
         if let data = try? hexBytes(value, input: "CBOR") { return data }
         guard let data = Data(base64Encoded: value.filter { !$0.isWhitespace }) else {
             throw DecoderFailure.message("CBOR: assertion must be hex or Base64.")

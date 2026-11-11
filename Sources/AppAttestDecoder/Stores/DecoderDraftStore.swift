@@ -9,7 +9,7 @@ enum DecoderDraftStore {
         return try context.fetch(descriptor).first
     }
 
-    static func save(kind: String, input: String, appID: String, challenge: String, publicKey: String = "", clientDataHash: String = "", verificationOptionsJSON: String = "", context: ModelContext) throws {
+    static func save(kind: String, input: String, appID: String, challenge: String, publicKey: String = "", verificationOptionsJSON: String = "", context: ModelContext) throws {
         let draft: DecoderDraft
         if let existing = try load(kind: kind, context: context) {
             draft = existing
@@ -22,7 +22,6 @@ enum DecoderDraftStore {
         draft.challenge = challenge
         draft.verificationOptionsJSON = verificationOptionsJSON
         draft.publicKey = publicKey
-        draft.clientDataHash = clientDataHash
         try context.save()
     }
 

@@ -63,7 +63,7 @@ The example is entirely synthetic. Its complete inputs are in [assertion-example
 In your iOS app, `DCAppAttestService.attestKey(_:clientDataHash:completionHandler:)` returns the attestation object as `Data`. Log or copy it as hex or Base64, for example `attestationObject.base64EncodedString()`, together with the challenge string you hashed into `clientDataHash`.
 
 1. Choose **Attestation Decoder**.
-2. Paste hex, Base64, or an `ATTESTATION_OBJECT_HEX` log line, or import a UTF-8 text file.
+2. Paste hex or Base64, or import a UTF-8 text file containing it.
 3. Optionally enter your app identifier as `TeamID.BundleID` (for example `ABCDE12345.com.example.app`) and the original UTF-8 attestation challenge.
 4. Choose **Decode object** (⌘↩).
 5. Review the checks: **app id matches rpIdHash** confirms the App ID, **nonce matches challenge** confirms the challenge, and **key id = SHA256(public key)** confirms the credential key.
@@ -113,7 +113,7 @@ Inputs are limited to 4 MB. Temporary attestation-processing files are removed a
 ./script/test.sh                   # All regression and persistence checks
 ```
 
-You can also open `Package.swift` in Xcode. The reproducible app-bundle entrypoint is the script above. Optional modes: `--debug`, `--logs`, `--telemetry`, and `--verify`.
+You can also open `Package.swift` in Xcode. The reproducible app-bundle entrypoint is the script above. Optional modes: `--debug`, `--logs`, and `--verify`.
 
 Tests cover a synthetic known-valid assertion vector and negative cases, strict CBOR/DER handling, full receipt values, persistence across separate processes, draft independence, and clear behavior. GitHub Actions builds a release ZIP and runs tests on macOS.
 

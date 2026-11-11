@@ -4,7 +4,7 @@ MODE="${1:-run}"
 APP_NAME="AppAttestDecoder"
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
-case "$MODE" in run|--debug|--logs|--telemetry|--verify|--build|--install|--package) ;; *) echo "Usage: $0 [--build|--install|--package|--verify|--debug|--logs|--telemetry]" >&2; exit 2;; esac
+case "$MODE" in run|--debug|--logs|--verify|--build|--install|--package) ;; *) echo "Usage: $0 [--build|--install|--package|--verify|--debug|--logs]" >&2; exit 2;; esac
 ./script/check_environment.sh
 CONFIGURATION="${BUILD_CONFIGURATION:-debug}"
 case "$MODE" in --install|--package) CONFIGURATION=release;; esac
@@ -64,7 +64,7 @@ case "$MODE" in
   if [[ "${OPEN_AFTER_INSTALL:-1}" == 1 ]]; then /usr/bin/open "$DESTINATION"; fi
   ;;
 --debug) lldb -- "$APP_BUNDLE/Contents/MacOS/$APP_NAME" ;;
---logs|--telemetry) /usr/bin/open -n "$APP_BUNDLE"; /usr/bin/log stream --info --style compact --predicate 'process == "AppAttestDecoder"' ;;
+--logs) /usr/bin/open -n "$APP_BUNDLE"; /usr/bin/log stream --info --style compact --predicate 'process == "AppAttestDecoder"' ;;
 --verify) /usr/bin/open -n "$APP_BUNDLE"; sleep 2; pgrep -x "$APP_NAME" >/dev/null ;;
 run) /usr/bin/open -n "$APP_BUNDLE" ;;
 esac

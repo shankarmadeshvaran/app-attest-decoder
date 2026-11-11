@@ -36,7 +36,6 @@ enum DecoderService {
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/bin/python3")
         var arguments = [script.path, "--file", source.path]
-        if assertion { arguments.append("--assertion") }
         if !appID.isEmpty { arguments += ["--app-id", appID] }
         if !challenge.isEmpty { arguments += ["--challenge", challenge] }
         process.arguments = arguments

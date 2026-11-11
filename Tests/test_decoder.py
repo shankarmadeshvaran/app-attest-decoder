@@ -36,7 +36,7 @@ class DecoderTests(unittest.TestCase):
 
     def test_encodings_and_checks(self):
         raw = self.fixture()
-        for text in [raw.hex(), base64.b64encode(raw).decode(), '[AppAttest] [ATTESTATION_OBJECT_HEX] ' + raw.hex()]:
+        for text in [raw.hex(), base64.b64encode(raw).decode()]:
             result = self.run_decoder(text, '--app-id', 'TEAM.example.app')
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertIn('key id = SHA256(public key): OK', result.stdout)
@@ -52,7 +52,7 @@ class DecoderTests(unittest.TestCase):
     def test_assertion(self):
         auth = hashlib.sha256(b'TEAM.example.app').digest() + b'\x00' + (42).to_bytes(4, 'big')
         raw = cbor({'authenticatorData': auth, 'signature': bytes.fromhex('3006020101020102')})
-        for text in [raw.hex(), base64.b64encode(raw).decode(), '[ASSERTION_OBJECT_HEX] ' + raw.hex()]:
+        for text in [raw.hex(), base64.b64encode(raw).decode()]:
             result = self.run_decoder(text, '--assertion', '--app-id', 'TEAM.example.app')
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertIn('counter:           42', result.stdout)

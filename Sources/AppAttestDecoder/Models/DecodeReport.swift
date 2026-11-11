@@ -47,7 +47,6 @@ struct ReportSection: Identifiable, Sendable {
             checks.append(ReportCheck(label: "Certificate", outcome: body.contains("could not read") ? .unavailable : .read))
             checks.append(ReportCheck(label: "Trust", outcome: .notChecked))
         } else if title == "Signature" {
-
             checks.append(ReportCheck(label: "Replay", outcome: .notChecked))
         } else if title == "Receipt" {
             checks.append(ReportCheck(label: "Receipt", outcome: body.contains("could not parse") ? .unavailable : .read))

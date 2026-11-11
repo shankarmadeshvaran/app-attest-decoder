@@ -22,7 +22,7 @@ struct InputView: View {
             VStack(alignment: .leading, spacing: 6) {
                 Label(assertion ? "Assertion object" : "Attestation object", systemImage: "curlybraces")
                     .font(.title3.weight(.semibold))
-                Text("Paste hex, Base64, or an App Attest log line.")
+                Text("Paste the object as hex or Base64.")
                     .font(.callout).foregroundStyle(.secondary)
             }
             TextEditor(text: $input)
