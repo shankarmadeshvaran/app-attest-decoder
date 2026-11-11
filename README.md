@@ -10,6 +10,22 @@ A local macOS inspector for Apple App Attest attestations and assertions. Find o
 - Keep independent drafts locally with SwiftData, with a shared App ID.
 - Explore a known-valid example without changing your saved inputs.
 
+## Screenshots
+
+Values from the device and app are redacted in these screenshots.
+
+### Attestation Decoder
+
+| Input | Decoded report | Nonce and receipt |
+| --- | --- | --- |
+| ![Attestation input](.github/screenshots/01-attestation-input.png) | ![Attestation report with authData and certificate checks](.github/screenshots/02-attestation-report.png) | ![Nonce check and decoded receipt fields](.github/screenshots/03-attestation-receipt.png) |
+
+### Assertion Decoder
+
+| Input | Decoded report | Signature verification |
+| --- | --- | --- |
+| ![Assertion input with public key and clientDataHash](.github/screenshots/04-assertion-input.png) | ![Assertion report with App ID and counter checks](.github/screenshots/05-assertion-report.png) | ![Signature verification with VALID result](.github/screenshots/06-assertion-verification.png) |
+
 ## Getting started
 
 **Requirements:** a Mac with **Xcode 26+** (Swift 6.2+), Apple's Python 3 at `/usr/bin/python3`, and the system `openssl`. The app targets **macOS 14+**. No Apple Developer account, signing team, or provisioning profile is needed, and there are no third-party dependencies.
