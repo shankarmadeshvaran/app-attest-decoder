@@ -124,7 +124,6 @@ script/test_assertion.sh                           Native assertion test vector 
 script/test_persistence.sh                         SwiftData persistence check
 script/generate_xcodeproj.py                       Regenerates the Xcode project from the source tree
 Tests/                                             Python/decoder automated tests
-docs/                                              Release and supporting documentation
 .github/workflows/ci.yml                           macOS continuous integration
 ```
 
