@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2082FF1F808D64DFFD1AFF87 /* AppAttestDecoderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEA8149C85F404DD4BACF03 /* AppAttestDecoderApp.swift */; };
+		02F3E173962AE3D27D131270 /* Bundle+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A9388C6D662F94E4DCE9D /* Bundle+Resources.swift */; };
+		2F4BC853DD28023C194FB69A /* AssertionVerificationInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB43625E2E4CBCD87D85FD /* AssertionVerificationInputs.swift */; };
+		29A67321439E8BA94C2C316F /* DecodeReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8673A6C89700856E0845F0 /* DecodeReport.swift */; };
+		92B298BE0C59AF075C0E8B26 /* DecoderDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F01F5038C35616880D1C6 /* DecoderDraft.swift */; };
+		25397C7CF4BEA280543ACFF2 /* AssertionCBOR.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CA6CA37487253062DF4F64 /* AssertionCBOR.swift */; };
+		CC931250C8041DE97471015A /* AssertionSignatureVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AEA0FA2E45C20A7AC4FA2B /* AssertionSignatureVerifier.swift */; };
+		83BD8A257E6AC9445709E3DF /* DecoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889D56BD53E3312C36EDF595 /* DecoderService.swift */; };
+		2BEEA288112D5D44A956C365 /* DecoderDraftStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CA7F579B9B2D8C9E2C5E2B /* DecoderDraftStore.swift */; };
+		A86AE912F8DC8CEB2F9DB42E /* AssertionExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6944772BE751F014AC7F544C /* AssertionExampleView.swift */; };
+		A45021C2EF35C332CD56CCAA /* AssertionVerificationInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F0B7D33ECF42D909F7366 /* AssertionVerificationInputsView.swift */; };
+		E2A92A28BFA731B7E4381458 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3373AA9BB21CFF8E29B306E9 /* ContentView.swift */; };
+		00118DDA86A5C964C9A9E048 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16315B7E75DEA10FAC6CE64F /* InputView.swift */; };
+		D290556E86DA2CD839D9D632 /* ReceiptFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E088D8E5E92FBE2F31B24F /* ReceiptFieldView.swift */; };
+		AAADC391B7C1CA99D69731D8 /* ReportStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C28695F3E204D9D9759EF2E /* ReportStatusView.swift */; };
+		B3BC03B3DB307F6191D1A653 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865D7BA5D1D83C731E9CC80 /* ReportView.swift */; };
+		7BAE27786F5505A83A578144 /* WorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC497A19E69EA8835803884 /* WorkspaceView.swift */; };
+		62CA8D291CFFAD5880EB24FD /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = CABBBEDDF66A1E3CB0CAC00B /* AppIcon.icns */; };
+		A2067E838AFCB0EC4E2A1A7F /* appattest_decode.py in Resources */ = {isa = PBXBuildFile; fileRef = D0DA1CCB9D5CFE37FAC49E4D /* appattest_decode.py */; };
+		7EA6E8C00F394E999DE54CF7 /* assertion-example.json in Resources */ = {isa = PBXBuildFile; fileRef = D33C960051083E312DEDEA00 /* assertion-example.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		845F65209D19F1E91A3C573D /* AppAttestDecoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppAttestDecoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE2C64246D93BDF3BEDAE473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BEA8149C85F404DD4BACF03 /* AppAttestDecoderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAttestDecoderApp.swift; sourceTree = "<group>"; };
+		019A9388C6D662F94E4DCE9D /* Bundle+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Resources.swift"; sourceTree = "<group>"; };
+		CABB43625E2E4CBCD87D85FD /* AssertionVerificationInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionVerificationInputs.swift; sourceTree = "<group>"; };
+		0B8673A6C89700856E0845F0 /* DecodeReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeReport.swift; sourceTree = "<group>"; };
+		B61F01F5038C35616880D1C6 /* DecoderDraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderDraft.swift; sourceTree = "<group>"; };
+		D8CA6CA37487253062DF4F64 /* AssertionCBOR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionCBOR.swift; sourceTree = "<group>"; };
+		D2AEA0FA2E45C20A7AC4FA2B /* AssertionSignatureVerifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionSignatureVerifier.swift; sourceTree = "<group>"; };
+		889D56BD53E3312C36EDF595 /* DecoderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderService.swift; sourceTree = "<group>"; };
+		B2CA7F579B9B2D8C9E2C5E2B /* DecoderDraftStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderDraftStore.swift; sourceTree = "<group>"; };
+		6944772BE751F014AC7F544C /* AssertionExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionExampleView.swift; sourceTree = "<group>"; };
+		C22F0B7D33ECF42D909F7366 /* AssertionVerificationInputsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionVerificationInputsView.swift; sourceTree = "<group>"; };
+		3373AA9BB21CFF8E29B306E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		16315B7E75DEA10FAC6CE64F /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		E6E088D8E5E92FBE2F31B24F /* ReceiptFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptFieldView.swift; sourceTree = "<group>"; };
+		7C28695F3E204D9D9759EF2E /* ReportStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportStatusView.swift; sourceTree = "<group>"; };
+		9865D7BA5D1D83C731E9CC80 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		ECC497A19E69EA8835803884 /* WorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceView.swift; sourceTree = "<group>"; };
+		CABBBEDDF66A1E3CB0CAC00B /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		D0DA1CCB9D5CFE37FAC49E4D /* appattest_decode.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = appattest_decode.py; sourceTree = "<group>"; };
+		D33C960051083E312DEDEA00 /* assertion-example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "assertion-example.json"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE7006A0F8A8753331FC7CCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDA6D6223944636B9C5B54AA = {
+			isa = PBXGroup;
+			children = (
+				662D1FE02BC3684F771FC430 /* AppAttestDecoder */,
+				6E47C53A9677B6BC16B97EFE /* XcodeSupport */,
+				FBDC4F23F93125BBEEAE800C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		662D1FE02BC3684F771FC430 /* AppAttestDecoder */ = {
+			isa = PBXGroup;
+			children = (
+				D29FC6E3AF445F2F81853E9F /* App */,
+				2D4F9A2B56CC44478A7177C5 /* Models */,
+				F55F2AF17E558133A1465AA1 /* Services */,
+				AC7C02B888A40C2A333FD315 /* Stores */,
+				ED55EC5F9F35C70E73DCE895 /* Views */,
+				9ABFF3D851FE4F67576D9646 /* Resources */,
+			);
+			name = AppAttestDecoder;
+			path = Sources/AppAttestDecoder;
+			sourceTree = "<group>";
+		};
+		D29FC6E3AF445F2F81853E9F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4BEA8149C85F404DD4BACF03 /* AppAttestDecoderApp.swift */,
+				019A9388C6D662F94E4DCE9D /* Bundle+Resources.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2D4F9A2B56CC44478A7177C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CABB43625E2E4CBCD87D85FD /* AssertionVerificationInputs.swift */,
+				0B8673A6C89700856E0845F0 /* DecodeReport.swift */,
+				B61F01F5038C35616880D1C6 /* DecoderDraft.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F55F2AF17E558133A1465AA1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D8CA6CA37487253062DF4F64 /* AssertionCBOR.swift */,
+				D2AEA0FA2E45C20A7AC4FA2B /* AssertionSignatureVerifier.swift */,
+				889D56BD53E3312C36EDF595 /* DecoderService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AC7C02B888A40C2A333FD315 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				B2CA7F579B9B2D8C9E2C5E2B /* DecoderDraftStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		ED55EC5F9F35C70E73DCE895 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6944772BE751F014AC7F544C /* AssertionExampleView.swift */,
+				C22F0B7D33ECF42D909F7366 /* AssertionVerificationInputsView.swift */,
+				3373AA9BB21CFF8E29B306E9 /* ContentView.swift */,
+				16315B7E75DEA10FAC6CE64F /* InputView.swift */,
+				E6E088D8E5E92FBE2F31B24F /* ReceiptFieldView.swift */,
+				7C28695F3E204D9D9759EF2E /* ReportStatusView.swift */,
+				9865D7BA5D1D83C731E9CC80 /* ReportView.swift */,
+				ECC497A19E69EA8835803884 /* WorkspaceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9ABFF3D851FE4F67576D9646 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CABBBEDDF66A1E3CB0CAC00B /* AppIcon.icns */,
+				D0DA1CCB9D5CFE37FAC49E4D /* appattest_decode.py */,
+				D33C960051083E312DEDEA00 /* assertion-example.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6E47C53A9677B6BC16B97EFE /* XcodeSupport */ = {
+			isa = PBXGroup;
+			children = (
+				BE2C64246D93BDF3BEDAE473 /* Info.plist */,
+			);
+			path = XcodeSupport;
+			sourceTree = "<group>";
+		};
+		FBDC4F23F93125BBEEAE800C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				845F65209D19F1E91A3C573D /* AppAttestDecoder.app */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E8A3AD980EC179856012B7E /* AppAttestDecoder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8198663431F2A521B811DB48 /* Build configuration list for PBXNativeTarget "AppAttestDecoder" */;
+			buildPhases = (
+				9E199EDCB17B4C967EDEA5CE /* Sources */,
+				FE7006A0F8A8753331FC7CCD /* Frameworks */,
+				AB2660E5E1235C14F8623B10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppAttestDecoder;
+			productName = AppAttestDecoder;
+			productReference = 845F65209D19F1E91A3C573D /* AppAttestDecoder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98F54143AB4E86B28C3AFEE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					0E8A3AD980EC179856012B7E = {
+						CreatedOnToolsVersion = 26.0;
+					};
+				};
+			};
+			buildConfigurationList = D6CC217727934A074E68F345 /* Build configuration list for PBXProject "AppAttestDecoder" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDA6D6223944636B9C5B54AA;
+			productRefGroup = FBDC4F23F93125BBEEAE800C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E8A3AD980EC179856012B7E /* AppAttestDecoder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB2660E5E1235C14F8623B10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62CA8D291CFFAD5880EB24FD /* AppIcon.icns in Resources */,
+				A2067E838AFCB0EC4E2A1A7F /* appattest_decode.py in Resources */,
+				7EA6E8C00F394E999DE54CF7 /* assertion-example.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E199EDCB17B4C967EDEA5CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2082FF1F808D64DFFD1AFF87 /* AppAttestDecoderApp.swift in Sources */,
+				02F3E173962AE3D27D131270 /* Bundle+Resources.swift in Sources */,
+				2F4BC853DD28023C194FB69A /* AssertionVerificationInputs.swift in Sources */,
+				29A67321439E8BA94C2C316F /* DecodeReport.swift in Sources */,
+				92B298BE0C59AF075C0E8B26 /* DecoderDraft.swift in Sources */,
+				25397C7CF4BEA280543ACFF2 /* AssertionCBOR.swift in Sources */,
+				CC931250C8041DE97471015A /* AssertionSignatureVerifier.swift in Sources */,
+				83BD8A257E6AC9445709E3DF /* DecoderService.swift in Sources */,
+				2BEEA288112D5D44A956C365 /* DecoderDraftStore.swift in Sources */,
+				A86AE912F8DC8CEB2F9DB42E /* AssertionExampleView.swift in Sources */,
+				A45021C2EF35C332CD56CCAA /* AssertionVerificationInputsView.swift in Sources */,
+				E2A92A28BFA731B7E4381458 /* ContentView.swift in Sources */,
+				00118DDA86A5C964C9A9E048 /* InputView.swift in Sources */,
+				D290556E86DA2CD839D9D632 /* ReceiptFieldView.swift in Sources */,
+				AAADC391B7C1CA99D69731D8 /* ReportStatusView.swift in Sources */,
+				B3BC03B3DB307F6191D1A653 /* ReportView.swift in Sources */,
+				7BAE27786F5505A83A578144 /* WorkspaceView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2FC48F3AB082063A390C64F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		C33768940012968B63EC36A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		07176CF255BB2737F729B86C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XcodeSupport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "App Attest Decoder";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Shankar Madeshvaran. MIT License.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.appattestdecoder;
+				PRODUCT_NAME = AppAttestDecoder;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		AAE80D71C6C9B2DC1D40F3A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XcodeSupport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "App Attest Decoder";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Shankar Madeshvaran. MIT License.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.appattestdecoder;
+				PRODUCT_NAME = AppAttestDecoder;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D6CC217727934A074E68F345 /* Build configuration list for PBXProject "AppAttestDecoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FC48F3AB082063A390C64F2 /* Debug */,
+				C33768940012968B63EC36A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8198663431F2A521B811DB48 /* Build configuration list for PBXNativeTarget "AppAttestDecoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07176CF255BB2737F729B86C /* Debug */,
+				AAE80D71C6C9B2DC1D40F3A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+}

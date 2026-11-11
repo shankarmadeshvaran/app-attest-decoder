@@ -1,0 +1,15 @@
+.build/
+dist/
+.DS_Store
+__pycache__/
+.swiftpm/
+.codex/
+.env
+.env.*
+!.env.example
+*.store
+*.store-shm
+*.store-wal
+xcuserdata/
+DerivedData/
+*.xcodeproj/project.xcworkspace/

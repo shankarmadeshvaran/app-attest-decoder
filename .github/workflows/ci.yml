@@ -1,0 +1,32 @@
+name: macOS build and tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: macos-15
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.2.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check environment
+        run: ./script/check_environment.sh
+      - name: Run regression and persistence tests
+        run: ./script/test.sh
+      - name: Build Xcode project
+        run: xcodebuild -project AppAttestDecoder.xcodeproj -scheme AppAttestDecoder -configuration Debug -destination 'platform=macOS' -derivedDataPath .build/xcode build
+      - name: Check Xcode project is up to date
+        run: python3 script/generate_xcodeproj.py . && git diff --exit-code -- AppAttestDecoder.xcodeproj
+      - name: Build distributable app
+        run: ./script/build_and_run.sh --package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AppAttestDecoder-macos-${{ runner.arch }}
+          path: |
+            dist/*.zip
+            dist/*.sha256
+          retention-days: 14
