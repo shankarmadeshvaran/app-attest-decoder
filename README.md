@@ -26,6 +26,10 @@ Values from the device and app are redacted in these screenshots.
 | --- | --- | --- |
 | ![Assertion input with public key and clientDataHash](.github/screenshots/04-assertion-input.png) | ![Assertion report with App ID and counter checks](.github/screenshots/05-assertion-report.png) | ![Signature verification with VALID result](.github/screenshots/06-assertion-verification.png) |
 
+## App Attest guide
+
+[App Attest Verification Guide (PDF)](docs/App_Attest_Verification_Guide.pdf) explains the complete App Attest flow: key generation, attestation, server-side validation, assertions, fraud-risk assessment, and rollout practices.
+
 ## Getting started
 
 **Requirements:** a Mac with **Xcode 26+** (Swift 6.2+), Apple's Python 3 at `/usr/bin/python3`, and the system `openssl`. The app targets **macOS 14+**. No Apple Developer account, signing team, or provisioning profile is needed, and there are no third-party dependencies.
@@ -108,3 +112,5 @@ The attestation decoder the app bundles can also be run directly: `python3 Sourc
 ## License
 
 [MIT](LICENSE). This is an independent project and is not affiliated with Apple.
+
+The Apple diagrams in the App Attest guide are © Apple Inc., taken from Apple's App Attest documentation and WWDC material for reference, and are not covered by this repository's license.

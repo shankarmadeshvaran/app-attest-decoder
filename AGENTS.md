@@ -99,6 +99,7 @@ Sources/AppAttestDecoder/Models/                   Codable/display and SwiftData
 Sources/AppAttestDecoder/Stores/                   SwiftData draft storage
 Sources/AppAttestDecoder/Services/                 Decoding, CBOR parsing, and assertion verification
 Sources/AppAttestDecoder/Resources/                Bundled Python decoder, sample data, icon
+docs/App_Attest_Verification_Guide.pdf             App Attest flow guide (contains Apple diagrams, © Apple)
 script/test.sh                                     Full test entry point
 script/test_assertion.sh                           Native assertion test vector check
 script/test_persistence.sh                         SwiftData persistence check
