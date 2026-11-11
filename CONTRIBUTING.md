@@ -13,8 +13,8 @@ SwiftData on the main actor for drafts. Preserve exact signed bytes; never silen
 trim, reorder, or normalize clientData. The assertion test vector must stay VALID.
 Add a failing regression test for changes to signature or CBOR handling.
 
-The canonical Python CLI source is
-`Sources/AppAttestDecoder/Resources/appattest_decode.py`; the root CLI is a symlink.
+The Python attestation decoder bundled into the app is
+`Sources/AppAttestDecoder/Resources/appattest_decode.py`.
 
 Use synthetic examples in issues, screenshots, tests, and pull requests. Never commit
 private keys, credentials, real client payloads, local databases, or personal drafts.

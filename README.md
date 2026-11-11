@@ -102,7 +102,7 @@ The native CBOR parser requires exactly two unique byte-string entries (`signatu
 
 The app makes no network requests and includes no analytics. SwiftData saves drafts and the extracted public key on your Mac; the app does not add its own database encryption. **Clear** resets the active draft while preserving shared App ID. Clipboard contents and exported reports remain under your control. Reports are regenerated after reopening; changed inputs mark old reports stale.
 
-Inputs are limited to 4 MB. Temporary attestation-processing files are removed after decoding. See [SECURITY.md](SECURITY.md) for scope and reporting guidance.
+Inputs are limited to 4 MB. Temporary attestation-processing files are removed after decoding.
 
 ## Development
 
@@ -117,7 +117,7 @@ You can also open `Package.swift` in Xcode. The reproducible app-bundle entrypoi
 
 Tests cover a synthetic known-valid assertion vector and negative cases, strict CBOR/DER handling, full receipt values, persistence across separate processes, draft independence, and clear behavior. GitHub Actions builds a release ZIP and runs tests on macOS.
 
-The Python CLI remains available as `python3 appattest_decode.py --help`. Its canonical source is `Sources/AppAttestDecoder/Resources/appattest_decode.py`; the root file is a symlink so changes cannot drift between copies.
+The attestation decoder the app bundles can also be run directly: `python3 Sources/AppAttestDecoder/Resources/appattest_decode.py --help`.
 
 ## AI-assisted development
 

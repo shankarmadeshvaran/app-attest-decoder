@@ -5,6 +5,7 @@ import subprocess
 import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+DECODER = ROOT / 'Sources/AppAttestDecoder/Resources/appattest_decode.py'
 
 
 def cbor(value):
@@ -32,7 +33,7 @@ class DecoderTests(unittest.TestCase):
         return cbor({'fmt': 'apple-appattest', 'authData': auth, 'attStmt': {'x5c': []}})
 
     def run_decoder(self, text, *args):
-        return subprocess.run(['/usr/bin/python3', str(ROOT / 'appattest_decode.py'), text, *args], capture_output=True, text=True)
+        return subprocess.run(['/usr/bin/python3', str(DECODER), text, *args], capture_output=True, text=True)
 
     def test_encodings_and_checks(self):
         raw = self.fixture()
@@ -70,7 +71,7 @@ class DecoderTests(unittest.TestCase):
         import importlib.util
         import io
         from unittest.mock import patch
-        spec = importlib.util.spec_from_file_location('decoder', ROOT / 'appattest_decode.py')
+        spec = importlib.util.spec_from_file_location('decoder', DECODER)
         decoder = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(decoder)
         obj, _ = decoder.cbor_item(self.fixture(), 0)
@@ -84,9 +85,6 @@ class DecoderTests(unittest.TestCase):
             self.assertIn(value.hex(), report)
         self.assertIn('attested certificate (hex):', report)
         self.assertNotIn('...', report)
-
-    def test_resource_matches_source(self):
-        self.assertEqual((ROOT / 'appattest_decode.py').read_bytes(), (ROOT / 'Sources/AppAttestDecoder/Resources/appattest_decode.py').read_bytes())
 
 
 if __name__ == '__main__':

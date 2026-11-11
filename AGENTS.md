@@ -128,7 +128,7 @@ docs/                                              Release and supporting docume
 .github/workflows/ci.yml                           macOS continuous integration
 ```
 
-`Sources/AppAttestDecoder/Resources/appattest_decode.py` is the canonical bundled attestation decoder. The root-level `appattest_decode.py`, where present, is a convenience symlink; preserve that relationship when editing the Python implementation.
+`Sources/AppAttestDecoder/Resources/appattest_decode.py` is the attestation decoder bundled into the app; `DecoderService` runs it with `/usr/bin/python3`. It can also be run directly from the command line.
 
 ## Data flow and state
 
