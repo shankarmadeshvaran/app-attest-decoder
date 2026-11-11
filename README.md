@@ -95,10 +95,6 @@ Tests cover a synthetic known-valid assertion vector and negative cases, strict 
 
 The attestation decoder the app bundles can also be run directly: `python3 Sources/AppAttestDecoder/Resources/appattest_decode.py --help`.
 
-## AI-assisted development
-
-Start any AI coding session with [AGENTS.md](AGENTS.md). It is the project handoff guide: the architecture, technology stack, setup and validation commands, assertion-verification contract, data-handling rules, and privacy/release guardrails needed to safely run and edit this repository without additional project context.
-
 Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
