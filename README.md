@@ -94,12 +94,6 @@ The native CBOR parser requires exactly two unique byte-string entries (`signatu
 
 **VALID is a diagnostic result for the supplied inputs, not a complete server authentication decision.** The app checks the supplied key, signature, and requested comparisons. It does not establish Apple certificate-chain trust, key provenance, challenge freshness, or server-side replay protection. Additional assertion extension layouts are not supported. Attestation receipts are decoded using OpenSSL `-noverify` and are not presented as trusted evidence.
 
-## Privacy and saved values
-
-The app makes no network requests and includes no analytics. SwiftData saves drafts and the extracted public key on your Mac; the app does not add its own database encryption. **Clear** resets the active draft while preserving shared App ID. Clipboard contents and exported reports remain under your control. Reports are regenerated after reopening; changed inputs mark old reports stale.
-
-Inputs are limited to 4 MB. Temporary attestation-processing files are removed after decoding.
-
 ## Development
 
 ```sh
@@ -110,8 +104,6 @@ python3 script/generate_xcodeproj.py .    # Regenerate the Xcode project after a
 Tests cover a synthetic known-valid assertion vector and negative cases, strict CBOR/DER handling, full receipt values, persistence across separate processes, draft independence, and clear behavior. GitHub Actions runs the tests, builds the Xcode project, and checks that the project file is up to date.
 
 The attestation decoder the app bundles can also be run directly: `python3 Sources/AppAttestDecoder/Resources/appattest_decode.py --help`.
-
-Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
